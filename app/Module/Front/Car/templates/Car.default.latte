@@ -1,0 +1,65 @@
+{block content}
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            {foreach $cars as $car}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="item-1">
+                        {if isset($car['main_images'])}
+                            <a href="http://{$car['main_images']->path}.cz"><img src="/{$car['main_images']->path}" alt="Image" class="img-fluid"></a>
+                        {else}
+                            <a href="http://kk.cz"><img src="/images/car_not_found.png" alt="Image" class="img-fluid"></a>
+                        {/if}
+                        <div class="item-1-contents">
+                            <div class="text-center">
+                                <h3><a href="{$car['id']}">{$car['title']}</a></h3>
+                                <div class="rating">
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                </div>
+                                <div class="rent-price">Cena <span>{$car['price']}</span></div>
+                            </div>
+                            <ul class="specs">
+                                <li>
+                                    <span>Značka</span>
+                                    <span class="spec">{$car['znacka']}</span>
+                                </li>
+                                <li>
+                                    <span>Model</span>
+                                    <span class="spec">{$car['model']} - {$car['karoserie']}</span>
+                                </li>
+                                <li>
+                                    <span>Palivo</span>
+                                    <span class="spec">{$car['palivo']}</span>
+                                </li>
+                                <li>
+                                    <span>Převodovka</span>
+                                    <span class="spec">{$car['prevodovka']}</span>
+                                </li>
+                                <li>
+                                    <span>Tachometr</span>
+                                    <span class="spec">{$car['tachometr']} km</span>
+                                </li>
+                            </ul>
+                            <div class="d-flex action">
+                                <a n:href="Car:detail $car['id']" class="btn btn-my">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {/foreach}
+
+
+            <div class="col-12">
+                <span class="p-3">1</span>
+                <a href="#" class="p-3">2</a>
+                <a href="#" class="p-3">3</a>
+                <a href="#" class="p-3">4</a>
+            </div>
+        </div>
+    </div>
+</div>
+

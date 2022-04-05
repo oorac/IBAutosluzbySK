@@ -1,0 +1,57 @@
+{block content}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Seznam faktur
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Značka</th>
+                    <th>Model</th>
+                    <th>Tachometr</th>
+                    <th>Cena</th>
+                    <th>Rok výroby</th>
+                    <th>Převodovka</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Značka</th>
+                    <th>Model</th>
+                    <th>Tachometr</th>
+                    <th>Cena</th>
+                    <th>Rok výroby</th>
+                    <th>Převodovka</th>
+                    <th>Akce</th>
+                </tr>
+            </tfoot>
+            <tbody>
+            {if $auta}
+                {foreach $auta as $auto}
+                    <tr {if $auto['hidden']} style="background-color: #fff2000d" {/if}>
+                        <td>{$auto['znacka']}</td>
+                        <td>{$auto['model']}</td>
+                        <td>{$auto['tachometr']} km</td>
+                        <td>{$auto['price']} EUR</td>
+                        <td>{$auto['year']}</td>
+                        <td>{$auto['prevodovka']}</td>
+                        <td>
+                            <a type="submit" n:href=":Admin:Seznamy:Auta:edit $auto['id']" class="btn btn-outline-info">Upravit</a>
+                            <a type="submit" n:href=":deleteCar! $auto['id']" class="btn btn-outline-danger">Smazat</a>
+                            {if $auto['hidden']}
+                                <a type="submit" n:href=":visibleCar! $auto['id']" class="btn btn-outline-secondary">Zveřejnit</a>
+                            {else}
+                                <a type="submit" n:href=":hiddenCar! $auto['id']" class="btn btn-outline-secondary">Skrýt</a>
+                            {/if}
+                        </td>
+                    </tr>
+                {/foreach}
+            {/if}
+            </tbody>
+        </table>
+    </div>
+</div>

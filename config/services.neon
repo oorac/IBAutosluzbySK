@@ -1,0 +1,12 @@
+services:
+	- App\Router\RouterFactory::createRouter
+
+	- App\Forms\FormFactory
+	- App\Forms\SignInFormFactory
+	- App\Forms\SignUpFormFactory
+	- App\Forms\SearchCarsFactory
+
+	- App\Model\Car
+	- App\Model\Database
+	- App\Model\UserFacade
+	- App\Model\Block

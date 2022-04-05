@@ -1,0 +1,49 @@
+<form n:name="form">
+    <div class="group-input">
+        <div class="group">
+            <input n:name="najezd_od" placeholder="Najazdené od" type="text" list="najezd_od"><br/>
+            <datalist id="najezd_od">
+                <option value="10000">
+                <option value="50000">
+            </datalist>
+            <div class="clear"></div>
+        </div>
+        <div class="group">
+            <input n:name="najezd_do" placeholder="Najazdené do" type="text"><br/>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="group-input">
+        <div class="group">
+            <input n:name="rok_vyroby_od" placeholder="Rok výroby od" type="text"><br/>
+            <div class="clear"></div>
+        </div>
+        <div class="group">
+            <input n:name="rok_vyroby_do" placeholder="Rok výroby do" type="text"><br/>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="group-input">
+        <div class="group">
+            <input n:name="karoserie" placeholder="Karoséria" type="text">
+            <div class="clear"></div>
+        </div>
+        <div class="group">
+            <input n:name="palivo" placeholder="Palivo" type="text">
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="group-input">
+        <div class="group">
+            <input n:name="cena_od" placeholder="Cena od" type="text">
+            <div class="clear"></div>
+        </div>
+        <div class="group">
+            <input n:name="cena_do" placeholder="Cena do" type="text">
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px">
+        <input n:name="send" type="submit" class="ml-auto btn sub_btn" value="Vyhľadať">
+    </div>
+</form>

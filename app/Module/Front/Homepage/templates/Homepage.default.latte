@@ -1,0 +1,146 @@
+{block content}
+<!-- about -->
+<div class="clear"></div>
+<div id="o-nas" class="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="titlepage">
+					<h2>O našich službách </h2>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10">
+					<div class="about_img">
+						<div class="about_box">
+							<h3>Zoznámenie s autami:  </h3>
+							{if isset($bloky)}
+								{$bloky|noescape}
+							{/if}
+							<a class="read_more btn">Prečítať viac</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end about -->
+<!-- wedo  section -->
+<div class="wedo ">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="titlepage">
+					<h2>Čo robíme</h2>
+					<p>Nami ponúkané služby</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-6 margin_bottom">
+						<div class="work">
+							<figure><img src="images/img1.png" alt="#" /></figure>
+						</div>
+						<div class="work_text">
+							<h3>Servis<br><span class="blu">Total Service</span></h3>
+						</div>
+					</div>
+					<div class="col-md-6 margin_bottom">
+						<div class="work">
+							<figure><img src="images/finance.png" alt="#" /></figure>
+						</div>
+						<div class="work_text">
+							<h3>Financovanie<br><span class="blu">Total Service</span></h3>
+						</div>
+					</div>
+					<div class="col-md-6 margin_bottom">
+						<div class="work">
+							<figure><img src="images/dovoz1.png" alt="#" /></figure>
+						</div>
+						<div class="work_text">
+							<h3>Dovoz áut<br> <span class="blu">Total Service</span></h3>
+						</div>
+					</div>
+					<div class="col-md-6 margin_bottom">
+						<div class="work">
+							<figure><img src="images/klimatizace.png" alt="#" /></figure>
+						</div>
+						<div class="work_text">
+							<h3>Plnenie klimatizácií<br><span class="blu">Total Service</span></h3>
+						</div>
+					</div>
+				</div>
+				<a class="read_more" href="#">Prečítať viac</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end wedo  section -->
+<!-- testimonial -->
+<div class="testimonial">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="titlepage">
+					<h2>Referencie</h2>
+					<p>Ako sú spokojní klienti s našimi službami?</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<?php foreach ($recenze_seznam as $recenze) : ?>
+						<div class="carousel-item <?php if($recenze[0]['id'] == $recenze_seznam[0][0]['id']) : ?> active <?php endif; ?>">
+							<div class="container">
+								<div class="carousel-caption ">
+									<div class="row">
+										<?php foreach ($recenze as $item) : ?>
+										<div class="col-md-6 margin_boot">
+											<div class="test_box">
+												<h4><?= $item['name'] ?></h4>
+												<span><?= date('d.m.Y', strtotime($item['created_date'])) ?></span>
+												<p><?= $item['text'] ?></p>
+											</div>
+										</div>
+										<?php endforeach; ?>
+										<?php foreach ($recenze as $item) : ?>
+										<div class="col-md-6 margin_boot">
+											<div class="test_box">
+												<h4><?= $item['name'] ?></h4>
+												<span><?= date('d.m.Y', strtotime($item['created_date'])) ?></span>
+												<p><?= $item['text'] ?></p>
+											</div>
+										</div>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?php endforeach; ?>
+					</div>
+					<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end testimonial -->

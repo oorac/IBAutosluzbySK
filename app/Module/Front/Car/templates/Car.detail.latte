@@ -1,0 +1,56 @@
+{block content}
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 blog-content">
+                <p class="lead"><img src="/images/car_not_found.png" alt="Image" class="img-fluid"></p>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+                <blockquote><p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p></blockquote>
+
+                <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+
+                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+                <blockquote><p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p></blockquote>
+
+                <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+
+                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+
+
+                <div class="pt-5">
+                    <p>Categories:  <a href="#">Design</a>, <a href="#">Events</a>  Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
+                </div>
+
+            </div>
+            <div class="col-md-4 sidebar">
+                <a class="nav-link" href="#o-nas">O nás</a>
+                <input type="submit" class="btn btn-check" value="Poptat" href="#kontakt"/>
+                <div class="sidebar-box">
+                    <div class="categories">
+                        <h3>Špecifikácie</h3>
+                        <li><a n:href=":Mark">Značka <span>{$car->znacka}</span></a> <span></span></li>
+                        <li><a n:href=":Model">Model <span>{$car->model}</span></a> <span></span></li>
+                        <li><a n:href=":Bodywork">Karoserie <span>{$car->karoserie}</span></a> <span></span></li>
+                        <li><a n:href=":Fuel">Palivo <span>{$car->palivo}</span></a> <span></span></li>
+                        <li><a n:href=":Transmission">Převodovka <span>{$car->prevodovka}</span></a> <span></span></li>
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <div class="categories">
+                        {if $parameters}
+                        <h3>Dalšie parametry</h3>
+
+                                {foreach $parameters as $parameter}
+                                    <li n:if="$parameter['name']" ><a>{$parameter['name']} <span>{$parameter['value']}</span></a> <span></span></li>
+                                {/foreach}
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
