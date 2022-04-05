@@ -1,10 +1,9 @@
 config/local.neon
-.docker
-.idea
-
-vendor
+/.docker/
+/.idea/
 
 phpunit.xml
 phpunit.phar
 
-public
+/public/
+/vendor/
