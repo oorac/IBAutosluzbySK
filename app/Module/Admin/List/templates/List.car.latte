@@ -3,7 +3,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Seznam faktur
+        Seznam automobilů
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -30,22 +30,22 @@
                 </tr>
             </tfoot>
             <tbody>
-            {if $auta}
-                {foreach $auta as $auto}
-                    <tr {if $auto['hidden']} style="background-color: #fff2000d" {/if}>
-                        <td>{$auto['znacka']}</td>
-                        <td>{$auto['model']}</td>
-                        <td>{$auto['tachometr']} km</td>
-                        <td>{$auto['price']} EUR</td>
-                        <td>{$auto['year']}</td>
-                        <td>{$auto['prevodovka']}</td>
+            {if isset($cars)}
+                {foreach $cars as $car}
+                    <tr {if $car['hidden']} style="background-color: #fff2000d" {/if}>
+                        <td>{$car['znacka']}</td>
+                        <td>{$car['model']}</td>
+                        <td>{$car['tachometr']} km</td>
+                        <td>{$car['price']} EUR</td>
+                        <td>{$car['year']}</td>
+                        <td>{$car['prevodovka']}</td>
                         <td>
-                            <a type="submit" n:href=":Admin:Seznamy:Auta:edit $auto['id']" class="btn btn-outline-info">Upravit</a>
-                            <a type="submit" n:href=":deleteCar! $auto['id']" class="btn btn-outline-danger">Smazat</a>
-                            {if $auto['hidden']}
-                                <a type="submit" n:href=":visibleCar! $auto['id']" class="btn btn-outline-secondary">Zveřejnit</a>
+                            <a type="submit" n:href=":Admin:List:Car:edit $car['id']" class="btn btn-outline-info">Upravit</a>
+                            <a type="submit" n:href=":deleteCar! $car['id']" class="btn btn-outline-danger">Smazat</a>
+                            {if $car['hidden']}
+                                <a type="submit" n:href=":visibleCar! $car['id']" class="btn btn-outline-secondary">Zveřejnit</a>
                             {else}
-                                <a type="submit" n:href=":hiddenCar! $auto['id']" class="btn btn-outline-secondary">Skrýt</a>
+                                <a type="submit" n:href=":hiddenCar! $car['id']" class="btn btn-outline-secondary">Skrýt</a>
                             {/if}
                         </td>
                     </tr>

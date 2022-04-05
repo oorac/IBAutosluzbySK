@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Module\Admin\Nastaveni;
+namespace App\Module\Admin\Settings;
 
 use App\Model\Block;
 use App\Module\Admin\BasePresenter;
@@ -8,12 +8,12 @@ use App\Module\Admin\BasePresenter;
 final class SettingsPresenter extends BasePresenter
 {
 
-    private Block $bloky;
+    private Block $block;
 
-    public function __construct(Block $bloky)
+    public function __construct(Block $block)
     {
         parent::__construct();
-        $this->bloky = $bloky;
+        $this->block = $block;
     }
 
     public function actionDefault()
@@ -21,20 +21,20 @@ final class SettingsPresenter extends BasePresenter
         
     }
 
-    public function actionDph()
+    public function actionVat()
     {
         
     }
 
-    public function actionBloky()
+    public function actionBlock()
     {
-        $this->template->bloky = $this->bloky->getAllBloky();
+        $this->template->blocks = $this->block->getAllBlocks();
     }
 
-    public function handledeleteBlok($blokId)
+    public function handledeleteBlock($blockId)
     {
-        $this->bloky->delete($blokId);
+        $this->block->delete($blockId);
         $this->flashMessage('Úspešne zmazané', 'danger');
-        $this->redirect(':Admin:Nastaveni:bloky');
+        $this->redirect(':Admin:Settings:block');
     }
 }

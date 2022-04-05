@@ -1,2 +1,10 @@
 config/local.neon
 .docker
+.idea
+
+vendor
+
+phpunit.xml
+phpunit.phar
+
+public

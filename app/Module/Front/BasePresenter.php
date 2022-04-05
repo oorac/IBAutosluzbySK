@@ -22,23 +22,23 @@ abstract class BasePresenter extends Presenter
 
     /** @var Config */
     protected $config;
-    protected Car $auta;
-    protected Block $bloky;
+    protected Car $car;
+    protected Block $block;
     protected SearchCarsFactory $searchCarsFactory;
     protected SignInFormFactory $signInFactory;
     protected SignUpFormFactory $signUpFactory;
 
     public function __construct(
-        Car               $auta,
-        Block             $bloky,
+        Car               $car,
+        Block             $block,
         SearchCarsFactory $searchCarsFactory,
         SignInFormFactory $signInFactory,
         SignUpFormFactory $signUpFactory,
     )
     {
         parent::__construct();
-        $this->auta = $auta;
-        $this->bloky = $bloky;
+        $this->car = $car;
+        $this->block = $block;
         $this->searchCarsFactory = $searchCarsFactory;
         $this->signInFactory = $signInFactory;
         $this->signUpFactory = $signUpFactory;
@@ -48,7 +48,7 @@ abstract class BasePresenter extends Presenter
     {
         parent::beforeRender();
 
-        $this->template->blokyBase = $this->bloky->getContentByName('base');
+        $this->template->blokyBase = $this->block->getContentByName('base');
         $this->template->basePath = '/';
         //$this->template->version = isset($this->config->getParameters()->version) ? '?v=' . $this->config->getParameters()->version : '';
     }
@@ -57,7 +57,7 @@ abstract class BasePresenter extends Presenter
     {
         $searchCars = $this->searchCarsFactory->create();
         $searchCars->onSearch[] = function (array $values){
-            $this->forward(':Front:Auta:', $values);
+            $this->forward(':Front:Car:', $values);
 //          $this->redirect(':Front:Auta:', $values);
         };
         return $searchCars;

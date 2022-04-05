@@ -1,0 +1,95 @@
+{block content}
+<h1 class="mt-4">Dashboard</h1>
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Počet aut ({if isset($celkem_aut)}{$celkem_aut}{/if})</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="/admin/seznamy/auta">Zobrazit seznam aut</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Počet poptávek ({if isset($celkem_poptavek)}{$celkem_poptavek}{/if})</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="./admin/poptavky">Zobrazit seznam poptávek</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">Nevyužito</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">Nevyužito</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Nevyužito</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">Nevyužito</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-area me-1"></i>
+                Grafické znázornění objednávek dle data
+            </div>
+            <div class="card-body"><!--<canvas id="myAreaChart" width="100%" height="40"></canvas>--></div>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-bar me-1"></i>
+                Grafické znázornění zisku dle měsíců
+            </div>
+            <div class="card-body"><!--<canvas id="myBarChart" width="100%" height="40"></canvas>--></div>
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Seznam objednávek za poslední týden
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+            <tr>
+                <th>Číslo</th>
+                <th>Datum</th>
+                <th>Celková částka</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Číslo</th>
+                <th>Datum</th>
+                <th>Celková částka</th>
+            </tr>
+            </tfoot>
+            <tbody>
+            <?php if(!empty($orders)) : ?>
+            <?php foreach ($orders as $order): ?>
+            <tr>
+                <td><?= $order['order_number'] ?></td>
+                <td><?= date('d.m.Y', strtotime($order['date'])) ?></td>
+                <td><?= ProductHelper::priceWithSale($order['total_price'], $order['sale']) ?></td>
+            </tr>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
