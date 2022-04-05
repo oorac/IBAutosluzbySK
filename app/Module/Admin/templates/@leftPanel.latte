@@ -1,0 +1,72 @@
+
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <a class="nav-link" n:href=":Admin:Homepage:default">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Dashboard
+                </a>
+                <div class="sb-sidenav-menu-heading">Menu</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Doklady" aria-expanded="false" aria-controls="Doklady" hidden>
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Doklady
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="Doklady" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" n:href=":Admin:Document:order" >Objednávky</a>
+                        <a class="nav-link" n:href=":Admin:Document:invoice" >Faktury</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Stranky" aria-expanded="false" aria-controls="Stranky">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Stránky
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="Stranky" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" n:href=":Admin:Page:car">Autá</a>
+                        <a class="nav-link" n:href=":Admin:Page:about">O nás</a>
+                        <a class="nav-link" n:href=":Admin:Page:service">Služby</a>
+                        <a class="nav-link" n:href=":Admin:Page:additionalservice">Doplnkové služby</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#auta_seznamy" aria-expanded="false" aria-controls="auta_seznamy">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Autá a zoznamy
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="auta_seznamy" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" n:href=":Admin:List:car">Autá</a>
+                        <a class="nav-link" n:href=":Admin:List:parameter">Parametre</a>
+                        <a class="nav-link" n:href=":Admin:List:fuel">Palivá</a>
+                        <a class="nav-link" n:href=":Admin:List:tag">Štítky</a>
+                        <a class="nav-link" n:href=":Admin:List:transmission">Prevodovky</a>
+                        <a class="nav-link" n:href=":Admin:List:bodywork">Karoséria</a>
+                        <a class="nav-link" n:href=":Admin:List:mark">Značky</a>
+                        <a class="nav-link" n:href=":Admin:List:model">Modely značiek</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Nastaveni" aria-expanded="false" aria-controls="Nastaveni">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Nastavenia
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="Nastaveni" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" n:href=":Admin:Settings:vat">Sadzby DPH</a>
+                        <a class="nav-link" n:href=":Admin:Settings:block">Bloky</a>
+                        <a class="nav-link" n:href=":Admin:Settings:reference">Referencie</a>
+                        <a class="nav-link" n:href=":Admin:Settings:">Nastavenie webu</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Prihlásený ako:</div>
+            {$user->identity->data['username']}
+        </div>
+    </nav>
+</div>

@@ -26,6 +26,11 @@ final class SettingsPresenter extends BasePresenter
         
     }
 
+    public function actionLog()
+    {
+
+    }
+
     public function actionBlock()
     {
         $this->template->blocks = $this->block->getAllBlocks();

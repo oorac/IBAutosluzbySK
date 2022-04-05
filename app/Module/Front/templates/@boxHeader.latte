@@ -1,0 +1,31 @@
+<section>
+    <!-- three_box -->
+    <div class="three_box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box_text">
+                        <h3>Financovanie</h3>
+                        <i><img src="{='images/thr3.png'|asset}" alt="#"/></i>
+                        <p>{if isset($blokyBase['Financovanie']['text'])}{strip_tags($blokyBase['Financovanie']['text'])}{/if}</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box_text">
+                        <h3>Dovoz áut</h3>
+                        <i><img src="{='images/thr.png'|asset}" alt="#"/></i>
+                        <p>{if isset($blokyBase['Dovoz']['text'])}{strip_tags($blokyBase['Dovoz']['text'])}{/if}</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box_text">
+                        <h3>Servis</h3>
+                        <i><img src="{='images/thr2.png'|asset}" alt="#"/></i>
+                        <p>{if isset($blokyBase['Servis']['text'])}{strip_tags($blokyBase['Servis']['text'])}{/if}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- three_box -->
+</section>

@@ -1,0 +1,40 @@
+<div class="container site-section mb-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-7 text-center mb-5">
+            <h2>Ako získať auto</h2>
+            <p>Aké kroky je potrebné urobiť na dosiahnutie výsledku?</p>
+        </div>
+    </div>
+    <div class="how-it-works d-flex">
+        {if isset($blokyBase['Krok-1']['text'])}
+            <div class="step">
+                <span class="number"><span>01</span></span>
+                <span class="caption">{strip_tags($blokyBase['Krok-1']['text'])}</span>
+            </div>
+        {/if}
+			{if isset($blokyBase['Krok-2']['text'])}
+            <div class="step">
+                <span class="number"><span>02</span></span>
+                <span class="caption">{strip_tags($blokyBase['Krok-2']['text'])}</span>
+            </div>
+        {/if}
+			{if isset($blokyBase['Krok-3']['text'])}
+            <div class="step">
+                <span class="number"><span>03</span></span>
+                <span class="caption">{strip_tags($blokyBase['Krok-3']['text'])}</span>
+            </div>
+        {/if}
+			{if isset($blokyBase['Krok-4']['text'])}
+            <div class="step">
+                <span class="number"><span>04</span></span>
+                <span class="caption">{strip_tags($blokyBase['Krok-4']['text'])}</span>
+            </div>
+        {/if}
+			{if isset($blokyBase['Krok-5']['text'])}
+            <div class="step">
+                <span class="number"><span>05</span></span>
+                <span class="caption">{strip_tags($blokyBase['Krok-5']['text'])}</span>
+            </div>
+        {/if}
+    </div>
+</div>
