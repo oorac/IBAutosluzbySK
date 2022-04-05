@@ -21,16 +21,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 	<link href="/administrace/css/styles.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-	<script src="/path/to/tinymce.min.js"></script>
-	<script type="text/javascript">
-		tinymce.init({
-			entity_encoding : "raw",
-			selector: '#mytextarea',
-			height: '500px',
-			width: '1000px'
-		});
-	</script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -148,9 +138,9 @@
 					<div class="text-muted">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Všetky práva vyhradené | Vytvorila spoločnosť <a href="https://idop.cz" target="_blank">IDOP</a>
 					</div>
 					<div>
-						<a n:href=":Front:Homepage:gdpr">Spracovanie osobných údajov</a>
+						<a n:href=":Front:Gdpr:">Spracovanie osobných údajov</a>
 						&middot;
-						<a n:href=":Front:Homepage:vop">Všeobecné obchodné podmienky</a>
+						<a n:href=":Front:Vop:">Všeobecné obchodné podmienky</a>
 					</div>
 				</div>
 			</div>
@@ -165,6 +155,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+<script src="/ckeditor/ckeditor.js"></script>
+<script>
+	// Replace the <textarea id="editor1"> with a CKEditor 4
+	// instance, using default configuration.
+	CKEDITOR.replace( 'editor' );
+</script>
+
 </body>
 
 </html>

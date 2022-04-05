@@ -2,16 +2,15 @@
 
 namespace App\Module\Front;
 
-use App\Forms\SearchCars;
-use App\Forms\SearchCarsFactory;
+use App\Forms\SearchCars\SearchCars;
+use App\Forms\SearchCars\SearchCarsFactory;
 use App\Forms\SignInFormFactory;
 use App\Forms\SignUpFormFactory;
 use App\Model\Car;
 use App\Model\Block;
-use App\Services\Config;
-use Nette;
-use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
+use HTMLPurifier;
+use HTMLPurifier_Config;
 
 abstract class BasePresenter extends Presenter
 {
@@ -20,8 +19,6 @@ abstract class BasePresenter extends Presenter
     const FM_WARNING = 'warning';
     const FM_ERROR = 'danger';
 
-    /** @var Config */
-    protected $config;
     protected Car $car;
     protected Block $block;
     protected SearchCarsFactory $searchCarsFactory;
@@ -33,7 +30,7 @@ abstract class BasePresenter extends Presenter
         Block             $block,
         SearchCarsFactory $searchCarsFactory,
         SignInFormFactory $signInFactory,
-        SignUpFormFactory $signUpFactory,
+        SignUpFormFactory $signUpFactory
     )
     {
         parent::__construct();
@@ -61,6 +58,16 @@ abstract class BasePresenter extends Presenter
 //          $this->redirect(':Front:Auta:', $values);
         };
         return $searchCars;
+    }
+
+    protected function getHtmlPurifier($data){
+        $config = HTMLPurifier_Config::createDefault();
+        $config->set('Core.Encoding', 'UTF-8'); // replace with your encoding
+        $config->set('HTML.Doctype', 'HTML 4.01 Transitional'); // replace with your doctype
+        $def = $config->getHTMLDefinition(true);
+        $def->addAttribute('h4', 'target', 'Enum#_blank,_self,_target,_top');
+        $purifier = new HTMLPurifier($config);
+        return $purifier->purify($data);
     }
 
     public function getFileVersion($file): int

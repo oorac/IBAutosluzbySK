@@ -3,8 +3,6 @@
 namespace App\Module\Admin;
 
 use App\Presenters\RequireLoggedUser;
-use App\Services\Config;
-use Nette;
 use Nette\Application\UI\Presenter;
 use Nette\Http\IResponse;
 
@@ -16,8 +14,6 @@ abstract class BasePresenter extends Presenter
     const FM_WARNING = 'warning';
     const FM_ERROR = 'danger';
 
-    /** @var Config */
-    protected $config;
     /**
      * Common render method.
      * @return void

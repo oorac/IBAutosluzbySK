@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Forms;
+namespace App\Forms\SearchCars;
 
-use App\Model\Car;
 use Nette\Application\UI\Control;
 use Nette\Application\UI\Form;
 
@@ -64,7 +63,7 @@ final class SearchCars extends Control
 
     public function render(): void
     {
-        $this->getTemplate()->setFile(__DIR__ . '/searchCars.latte');
+        $this->getTemplate()->setFile(__DIR__ . '/templates/searchCars.latte');
         $this->getTemplate()->render();
     }
 }

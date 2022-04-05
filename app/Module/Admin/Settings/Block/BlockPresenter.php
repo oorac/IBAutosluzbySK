@@ -11,9 +11,11 @@ final class BlockPresenter extends BasePresenter
     public const LIST_PAGES = [
       'base' => 'Predvolené',
       'homepage' => 'Úvodná',
-      'sluzby' => 'Služby',
-      'dopl_sluzby' => 'Doplnkové služby',
-      'auta' => 'Autá',
+      'gdpr' => 'GDPR',
+      'vop' => 'VOP',
+      'service' => 'Služby',
+      'add_service' => 'Doplnkové služby',
+      'car' => 'Autá',
     ];
     private Block $block;
 
@@ -59,7 +61,7 @@ final class BlockPresenter extends BasePresenter
         $form->addText('name', 'Názov bloku')
             ->setRequired('"Názov bloku" je povinný');
         $form->addTextArea('text', 'Obsah bloku')
-            ->setHtmlId('mytextarea')
+            ->setHtmlId('editor')
             ->setRequired('"Obsah bloku" je povinný');
         $form->addCheckbox('default', 'Výchozí');
         $form->addSubmit('submit', 'Uložit');

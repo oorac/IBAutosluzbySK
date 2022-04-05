@@ -6,6 +6,7 @@ up:
 # Start dev environment with forced build
 up\:build:
 	docker-compose -f .docker/docker-compose.yml up -d --build;
+	@echo 'App is running on http://localhost:8081';
 
 # Stop dev environment
 down:

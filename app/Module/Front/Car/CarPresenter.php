@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Module\Front\car;
+namespace App\Module\Front\Car;
 
-use App\Model\Car;
 use App\Module\Front\BasePresenter;
 
 final class CarPresenter extends BasePresenter
