@@ -34,7 +34,7 @@ final class SignInFormFactory
 
 		$form->addCheckbox('remember', 'Zapamatuj si mě');
 
-		$form->addSubmit('send', 'Přihlásit');
+		$form->addSubmit('send', 'Prihlásiť');
 
 		$form->onSuccess[] = function (Form $form, \stdClass $values) use ($onSuccess): void {
 			try {

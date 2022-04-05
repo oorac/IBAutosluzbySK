@@ -32,7 +32,7 @@ class Block extends Database
             ->fetchAssoc('name');
     }
 
-    public function getAllBloky()
+    public function getAllBlocks()
     {
         return $this->getContent()
             ->select('*')

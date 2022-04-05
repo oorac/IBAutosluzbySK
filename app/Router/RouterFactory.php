@@ -30,10 +30,10 @@ final class RouterFactory
         $adminRouter->addRoute('admin/nastavenie/referencie', 'Settings:reference');
         $adminRouter->addRoute('admin/nastavenie', 'Settings:default');
 
-        $adminRouter->addRoute('admin/stranky/auta', 'Pages:car');
-        $adminRouter->addRoute('admin/stranky/o-nas', 'Pages:about');
-        $adminRouter->addRoute('admin/stranky/sluzby', 'Pages:service');
-        $adminRouter->addRoute('admin/stranky/doplnkove-sluzby', 'Pages:additionalservice');
+        $adminRouter->addRoute('admin/stranky/auta', 'Page:car');
+        $adminRouter->addRoute('admin/stranky/o-nas', 'Page:about');
+        $adminRouter->addRoute('admin/stranky/sluzby', 'Page:service');
+        $adminRouter->addRoute('admin/stranky/doplnkove-sluzby', 'Page:additionalservice');
 
         $adminRouter->addRoute('admin/<presenter>/<action>[/<id>]', 'Homepage:default');
 

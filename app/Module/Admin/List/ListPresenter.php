@@ -16,7 +16,7 @@ final class ListPresenter extends BasePresenter
         parent::__construct();
         $this->car = $car;
     }
-    public function actionCars()
+    public function actionCar()
     {
         $this->template->cars = $this->car->getAllInfoAboutCars();
     }

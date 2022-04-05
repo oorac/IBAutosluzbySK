@@ -55,10 +55,10 @@
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
 			<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" href="/admin/nastaveni">Nastavenia</a></li>
-				<li><a class="dropdown-item" href="/log" hidden>Logování</a></li>
+				<li><a class="dropdown-item" n:href=":Admin:Settings:default">Nastavenia</a></li>
+				<li><a class="dropdown-item" href=":Admin:Settings:log" hidden>Logování</a></li>
 				<li><hr class="dropdown-divider"/></li>
-				<li><a class="dropdown-item" href="/odhlaseni">Odhlásiť sa</a></li>
+				<li><a class="dropdown-item" n:href=":Front:Sign:out">Odhlásiť sa</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -68,7 +68,7 @@
 		<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
 			<div class="sb-sidenav-menu">
 				<div class="nav">
-					<a class="nav-link" href="/admin">
+					<a class="nav-link" n:href=":Admin:Homepage:default">
 						<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
 						Dashboard
 					</a>
@@ -80,8 +80,8 @@
 					</a>
 					<div class="collapse" id="Doklady" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 						<nav class="sb-sidenav-menu-nested nav">
-							<a class="nav-link" href="/admin/objednavky" >Objednávky</a>
-							<a class="nav-link" href="/admin/faktury" >Faktury</a>
+							<a class="nav-link" n:href=":Admin:Document:order" >Objednávky</a>
+							<a class="nav-link" n:href=":Admin:Document:invoice" >Faktury</a>
 						</nav>
 					</div>
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Stranky" aria-expanded="false" aria-controls="Stranky">
@@ -91,10 +91,10 @@
 					</a>
 					<div class="collapse" id="Stranky" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 						<nav class="sb-sidenav-menu-nested nav">
-							<a class="nav-link" href="/admin/stranky/auta">Autá</a>
-							<a class="nav-link" href="/admin/stranky/o-nas">O nás</a>
-							<a class="nav-link" href="/admin/stranky/sluzby">Služby</a>
-							<a class="nav-link" href="/admin/stranky/doplnkove-sluzby">Doplnkové služby</a>
+							<a class="nav-link" n:href=":Admin:Page:car">Autá</a>
+							<a class="nav-link" n:href=":Admin:Page:about">O nás</a>
+							<a class="nav-link" n:href=":Admin:Page:service">Služby</a>
+							<a class="nav-link" n:href=":Admin:Page:additionalservice">Doplnkové služby</a>
 						</nav>
 					</div>
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#auta_seznamy" aria-expanded="false" aria-controls="auta_seznamy">
@@ -104,14 +104,14 @@
 					</a>
 					<div class="collapse" id="auta_seznamy" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 						<nav class="sb-sidenav-menu-nested nav">
-							<a class="nav-link" href="/admin/seznamy/auta">Autá</a>
-							<a class="nav-link" href="/admin/seznamy/parametry">Parametre</a>
-							<a class="nav-link" href="/admin/seznamy/paliva">Palivá</a>
-							<a class="nav-link" href="/admin/seznamy/tagy">Štítky</a>
-							<a class="nav-link" href="/admin/seznamy/prevodovky">Prevodovky</a>
-							<a class="nav-link" href="/admin/seznamy/karoserie">Karoséria</a>
-							<a class="nav-link" href="/admin/seznamy/znacky">Značky</a>
-							<a class="nav-link" href="/admin/seznamy/modely">Modely značiek</a>
+							<a class="nav-link" n:href=":Admin:List:car">Autá</a>
+							<a class="nav-link" n:href=":Admin:List:parameter">Parametre</a>
+							<a class="nav-link" n:href=":Admin:List:fuel">Palivá</a>
+							<a class="nav-link" n:href=":Admin:List:tag">Štítky</a>
+							<a class="nav-link" n:href=":Admin:List:transmission">Prevodovky</a>
+							<a class="nav-link" n:href=":Admin:List:bodywork">Karoséria</a>
+							<a class="nav-link" n:href=":Admin:List:mark">Značky</a>
+							<a class="nav-link" n:href=":Admin:List:model">Modely značiek</a>
 						</nav>
 					</div>
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Nastaveni" aria-expanded="false" aria-controls="Nastaveni">
@@ -121,10 +121,10 @@
 					</a>
 					<div class="collapse" id="Nastaveni" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 						<nav class="sb-sidenav-menu-nested nav">
-							<a class="nav-link" href="/admin/nastaveni/dph">Sadzby DPH</a>
-							<a class="nav-link" href="/admin/nastaveni/bloky">Bloky</a>
-							<a class="nav-link" href="/admin/nastaveni/recenze">Recenzie</a>
-							<a class="nav-link" href="/admin/nastaveni">Nastavenie webu</a>
+							<a class="nav-link" n:href=":Admin:Settings:vat">Sadzby DPH</a>
+							<a class="nav-link" n:href=":Admin:Settings:block">Bloky</a>
+							<a class="nav-link" n:href=":Admin:Settings:reference">Referencie</a>
+							<a class="nav-link" n:href=":Admin:Settings:">Nastavenie webu</a>
 						</nav>
 					</div>
 				</div>
@@ -148,9 +148,9 @@
 					<div class="text-muted">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Všetky práva vyhradené | Vytvorila spoločnosť <a href="https://idop.cz" target="_blank">IDOP</a>
 					</div>
 					<div>
-						<a n:href=":Front:Gdpr">Spracovanie osobných údajov</a>
+						<a n:href=":Front:Homepage:gdpr">Spracovanie osobných údajov</a>
 						&middot;
-						<a n:href=":Front:Vop">Všeobecné obchodné podmienky</a>
+						<a n:href=":Front:Homepage:vop">Všeobecné obchodné podmienky</a>
 					</div>
 				</div>
 			</div>
