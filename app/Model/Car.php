@@ -9,21 +9,44 @@ class Car extends Database
         return $this->getAll()->get($id);
     }
 
-    public function getAllInfoAboutCars($najezd_od = null, $najezd_do = null)
+    public function getAllInfoAboutCars($type = null, $mark = null, $model = null, $fuel = null, $year_from = null, $year_to = null, $price_from = null, $price_to = null, )
     {
         $query = $this->getAll()
-            ->select('car.*, vat.name AS vat, karoserie.name AS karoserie, 
-                    znacka.name AS znacka, model.name AS model, palivo.name AS palivo, prevodovka.name AS prevodovka,
+            ->select('car.*, vat.name AS vat, bodywork.name AS bodywork, type.name AS type, 
+                    mark.name AS mark, model.name AS model, fuel.name AS fuel, transmission.name AS transmission,
                      car.id AS id');
-        if(!empty($najezd_od))
+        if(!empty($type))
         {
-            $query->where('car.hidden = 1');
+            $query->where('car.type_id', $type);
         }
-
-//        if(!empty($najezd_do))
-//        {
-//            $query->where('tachometr <=', $najezd_do);
-//        }
+        if(!empty($mark))
+        {
+            $query->where('car.mark_id', $mark);
+        }
+        if(!empty($model))
+        {
+            $query->where('car.model_id', $model);
+        }
+        if(!empty($fuel))
+        {
+            $query->where('car.fuel_id', $fuel);
+        }
+        if(!empty($year_from))
+        {
+            $query->where('car.year >=', $year_from);
+        }
+        if(!empty($year_to))
+        {
+            $query->where('car.year <=', $year_to);
+        }
+        if(!empty($price_from))
+        {
+            $query->where('car.price >=', $price_from);
+        }
+        if(!empty($price_to))
+        {
+            $query->where('car.price <=', $price_to);
+        }
 
         return $query->fetchAssoc('id');
     }

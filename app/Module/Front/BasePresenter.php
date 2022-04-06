@@ -44,10 +44,9 @@ abstract class BasePresenter extends Presenter
     protected function beforeRender()
     {
         parent::beforeRender();
-
+//        bdump($_SERVER['REQUEST_URI']);
         $this->template->blokyBase = $this->block->getContentByName('base');
         $this->template->basePath = '/';
-        //$this->template->version = isset($this->config->getParameters()->version) ? '?v=' . $this->config->getParameters()->version : '';
     }
 
     protected function createComponentSearchCars(): SearchCars
@@ -69,39 +68,4 @@ abstract class BasePresenter extends Presenter
         $purifier = new HTMLPurifier($config);
         return $purifier->purify($data);
     }
-
-    public function getFileVersion($file): int
-    {
-        if(file_exists($file)) {
-            return filemtime($file);
-        } else {
-            return 0;
-        }
-    }
-
-//    protected function searchCars($data)
-//    {
-//        $cars = $this->auta->getAll();
-//        if(!empty($data['najezd_od']))
-//            $cars->where('tachometr >= ?', $data['najezd_od']);
-//        if(!empty($data['najezd_do']))
-//            $cars->where('tachometr <= ?', $data['najezd_do']);
-//        if(!empty($data['rok_vyroby_od']))
-//            $cars->where('year >= ?', $data['rok_vyroby_od']);
-//        if(!empty($data['rok_vyroby_do']))
-//            $cars->where('year <= ?', $data['rok_vyroby_do']);
-//        if(!empty($data['karoserie']))
-//            $cars->where('karoserie_id', $data['karoserie']);
-//        if(!empty($data['palivo']))
-//            $cars->where('palivo_id', $data['palivo']);
-//        if(!empty($data['cena_od']))
-//            $cars->where('price >= ?', $data['cena_od']);
-//        if(!empty($data['cena_do']))
-//            $cars->where('price <= ?', $data['cena_do']);
-//
-//        $cars->select('car.*, car.id AS id')
-//                ->order('id DESC')
-//                ->fetchAll();
-//        $this->redirect(':Front:Auta:');
-//    }
 }

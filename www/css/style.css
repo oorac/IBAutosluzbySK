@@ -1,9 +1,3 @@
-/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
 /*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
@@ -23,7 +17,6 @@
 @import url(font-awesome.min.css);
 @import url(meanmenu.css);
 @import url(owl.carousel.min.css);
-@import url(swiper.min.css);
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -339,10 +332,6 @@ ul.btn li:last-child {
      color: #E45601;
 }
 
-.navbar-expand-md .navbar-nav {
-     padding-right: 10px;
-}
-
 .padd_right {
      padding-right: 10px;
 }
@@ -431,7 +420,6 @@ section.banner_main .row .table .group-input{
      -webkit-box-flex: 0;
      flex: 0 1 auto;
 }
-
 .group-input .group{
      border: 0.0625rem solid #e0e0e0;
      border-radius: 0.25rem;
@@ -1188,11 +1176,36 @@ ul.social_icon li a:hover {
     padding: 20px;
     box-shadow: #ddd 0px 0px 14px -6px;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     section.banner_main .row .table .group-input{
         flex-direction: column;
     }
 }
 
+.btn.dropdown-toggle.btn-light.bs-placeholder{
+    padding: 10px 0px;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.25rem;
+    background: #fff;
+    color: #000;
+    box-shadow: inset 0 0.125rem 0.1875rem 0 rgb(0 0 0 / 15%);
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    height: 3rem;
+    -webkit-transition: box-shadow 0.15s cubic-bezier(0.215,0.61,0.355,1);
+    transition: box-shadow 0.15s cubic-bezier(0.215,0.61,0.355,1);
+}
+
+.btn.dropdown-toggle.btn-light.bs-placeholder:active{
+    border-color:white;
+}
+
+@media (max-width: 1024px){
+    .col-lg-8, .col-lg-4 {
+        -ms-flex: unset;
+        flex: unset;
+        max-width: unset;
+    }
+}
 
 /** end footer **/
